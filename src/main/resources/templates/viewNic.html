@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en" class="minimal-theme">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/images/foodboxlogo.png" type="image/png" />
+  <!--plugins-->
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!--toast-->
+  <link href="assets/plugins/jquery-toast/src/jquery.toast.css" rel="stylesheet" />
+  <link href="assets/plugins/jquery-toast/dist/jquery.toast.min.css" rel="stylesheet" />
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet" />
+  <!--Theme Styles-->
+  <link href="assets/css/dark-theme.css" rel="stylesheet" />
+  <link href="assets/css/light-theme.css" rel="stylesheet" />
+  <link href="assets/css/semi-dark.css" rel="stylesheet" />
+  <link href="assets/css/header-colors.css" rel="stylesheet" />
+
+  <title>viewNic</title>
+</head>
+
+<body>
+
+
+  <!--start wrapper-->
+  <div class="wrapper">
+    	 <!--start top header-->
+      <header class="top-header">        
+        <nav class="navbar navbar-expand">
+          <div class="mobile-toggle-icon d-xl-none">
+              <i class="bi bi-list"></i>
+            </div>
+            <div class="top-navbar d-none d-xl-block">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item">
+              <a class="nav-link" href="dashboard">Dashboard</a>
+              </li>
+            
+            </ul>
+            </div>          
+        </nav>
+      </header>
+       <!--end top header-->
+          <!--start sidebar -->
+        <aside class="sidebar-wrapper" data-simplebar="true">
+          <div class="sidebar-header">
+            
+           
+            <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
+            </div>
+          </div>
+         <!--navigation-->
+          <ul class="metismenu" id="menu">
+            <li>
+              <a href="dashboard" >
+                <div class="parent-icon"><i style='color:#f213e6' class="fa fa-home"></i>
+                </div>
+                <div class="menu-title">Dashboard</div>
+              </a>
+             </li>
+            
+           
+            <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon">
+                <i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+				</div>
+                <div class="menu-title">Admin</div>
+              </a>
+              <ul>
+                <li> <a href="addAdmin" ><i class="bi bi-arrow-right-short"></i>Add Admin</a>
+                </li>
+               <li> <a href="viewAdmin" ><i class="bi bi-arrow-right-short"></i>View Admin</a>
+                </li>
+              </ul>
+            </li>
+         
+              <li>
+              <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i style='color:#ffca36' class="fa fa-users" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">User</div>
+              </a>
+              <ul>
+               <li> <a href="addUser" ><i class="bi bi-arrow-right-short"></i>Add User</a>
+                </li>
+                <li> <a href="viewUser"><i class="bi bi-arrow-right-short"></i>View User</a>
+                </li>               
+              </ul>
+            </li>
+           
+             
+             <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">Station</div>
+              </a>
+              <ul>
+                <li> <a href="addStation" ><i class="bi bi-arrow-right-short"></i>Add Station</a>
+                </li>
+               <li> <a href="viewStation" ><i class="bi bi-arrow-right-short"></i>View Station</a>
+                </li>
+              </ul>
+            </li>
+             <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">NiC</div>
+              </a>
+              <ul>
+                <li> <a href="addNic"><i class="bi bi-arrow-right-short"></i>Add Nic</a>
+                </li>
+               <li> <a href="viewNic"><i class="bi bi-arrow-right-short"></i>View Nic</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">NiC</div>
+              </a>
+              <ul>
+                <li> <a href="addNic"><i class="bi bi-arrow-right-short"></i>Add Nic</a>
+                </li>
+               <li> <a href="viewNic"><i class="bi bi-arrow-right-short"></i>View Nic</a>
+                </li>
+              </ul>
+            </li>
+             <li>
+              <a href="destroyAdmin" >
+                <div class="parent-icon"><i style='color:red' class="fa fa-lock"></i>
+                </div>
+                <div class="menu-title">Logout</div>
+              </a>
+             </li>
+                      
+          </ul>
+          <!--end navigation-->
+       </aside>
+       <!--end sidebar -->
+       <!--start content-->
+          <main class="page-content">
+            <!--breadcrumb-->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+              <div class="breadcrumb-title pe-3">NiC</div>
+              <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb mb-0 p-0">
+                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page"> View NiC </li>
+                  </ol>
+                </nav>
+              </div>
+              
+            </div>
+            <!--end breadcrumb-->
+
+               <div class="card">
+                 <div class="card-body">
+                   <div class="d-flex align-items-center">
+                      <h5 class="mb-0">NiC Details</h5>
+                        &nbsp; &nbsp; &nbsp; &nbsp;  <h2 id="msg"></h2>
+                       <form class="ms-auto position-relative">
+                         <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
+                         <input class="form-control ps-5" type="text" placeholder="search">
+                       </form>
+                   </div>
+                   <div class="table-responsive mt-3">
+                     <table class="table align-middle">
+                       <thead class="table-secondary">
+                         <tr>
+                          <th>Id</th>
+                          <th>User</th>
+                          <th>Station</th>
+                          <th>Parameter Name</th>
+                          <th>Parameter Unit</th> 
+                          <th>Date</th>
+                          <th>status</th>
+                          <th>Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody id="view_nic">
+                        
+                        
+                        
+                       </tbody>
+                     </table>
+                   </div>
+                 </div>
+               </div>
+
+
+
+           
+          </main>
+       <!--end page main-->
+
+  </div>
+  <!--end wrapper-->
+  <!--Edit Modal dept-->
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Edit NIC</h5>
+		        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		       <div class="card-body">
+		           <div class="border p-3 rounded">
+		               <form class="row g-3" id="myform"  method="post" >
+		                   <div class="col-12">
+		                     <label class="form-label">Name</label>
+		                     <input type="text" class="form-control" name="user_name" id="user_name" >
+		                     <input type="hidden" id="sl_no" name="sl_no" value="">
+		                   </div>
+		                   <div class="col-12">
+						<label class="form-label"> Choose Station  </label>
+						<select class="form-control" id="allStation"  name="station" >
+						
+						</select>						 
+						</div>
+		                   <div class="col-12">
+		                     <label class="form-label">Parameter Name</label>
+		                     <input type="text" class="form-control" name="parameter_name" id="parameter_name">
+		                   </div>
+		                   <div class="col-12">
+		                     <label class="form-label">Parameter Unit</label>
+		                     <input type="text" class="form-control" name="parameter_unit" id="parameter_unit">
+		                   </div>
+		                   <div class="col-12">
+		                      <label class="form-label">Date</label>
+		                      <input type="date" class="form-control" name="date" id="date">
+		                   </div>	
+		                   <div class="col-12">
+		                      <label class="form-label">Status</label>
+		                      <input type="text" class="form-control" name="status" id="status">
+		                   </div>	               
+		                   <div class="col-12">
+		                      <input type="submit"  value="Update Nic" class="btn btn-primary px-4">
+		                   </div>
+		                 </form>
+		            </div>
+		        </div>
+		         
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+  <!-- Bootstrap bundle JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!--plugins-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <script src="assets/js/pace.min.js"></script>
+  <!--app-->
+  <script src="assets/js/app.js"></script>
+  
+   <!-- toast -->
+  <script src="assets/plugins/jquery-toast/src/jquery.toast.js"></script>
+  <script src="assets/plugins/jquery-toast/dist/jquery.toast.min.js"></script>
+ 
+<script type="text/javascript">
+		$(document).ready(function() {
+				getData();
+				function getData(){	        
+	        	$.ajax({
+	    			url:"/allNics",
+	    			type:"get",
+	    			dataType:"json",
+	    			success:function(data,textStatus,jqXHR){ 					 
+	    				console.log(data);	    				
+	    				 let s="";
+	    				for (var key in data) {
+	    					if (data.hasOwnProperty(key)) {
+	    					  s+="<tr>";
+	    					  s+="<td>"+data[key].sl_no+"</td>";	    					 
+	    					  s+="<td>"+data[key].user_name+"</td>";
+	    					  s+="<td>"+data[key].station.station_name+"</td>";	    					  
+	    					  s+="<td>"+data[key].parameter_name+"</td>";
+	    					  s+="<td>"+data[key].parameter_unit+"</td>";
+	    					  s+="<td>"+data[key].date+"</td>";
+	    					  s+="<td>"+data[key].status+"</td>";
+	    					  s+="<td><div class='table-actions d-flex align-items-center gap-3 fs-6'>";
+	    					  s+="<a  class='text-info nic_edit' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Edit' data-id='"+data[key].sl_no+"' id='"+data[key].sl_no+"'><i class='bi bi-pencil-fill'></i></a>";
+	    					  s+="<a  class='text-danger nic_delete' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Delete' data-id='"+data[key].sl_no+"' id='"+data[key].sl_no+"'><i class='bi bi-trash-fill'></i></a>";
+	    					  s+="</div></td></tr>";
+	    					}
+	    				}
+	    				$('#view_nic').html(s);
+	    				console.log("success...")
+	    	  		},
+	    		error:function(jqXHR,textStatus,errorThrown){
+	    			console.log(jqXHR.responseText);
+	    				console.log("error...")
+	    			}
+	    	    });
+			  }
+				 $(document).on('click', '.nic_delete', function() {
+					 sl_no = $(this).attr('id');
+	                 if (confirm('Are you sure you want to delete this?')) {
+	              $.ajax({
+					    type:'POST',
+					    url:'/deleteNic/'+sl_no,						
+						method:'POST',						
+						success:function(data,textStatus,jqXHR){							
+	  						if(data.trim() ==='done'){	  								  							
+		  		  				/* $('#msg').html(""); */
+		  		  			    $('#view_admin').html('');
+		  		  			    getData();
+	  		  				}else{
+	  		  					console.log("error...");
+		  		  			}
+	  				},
+					error:function(jqXHR,textStatus,errorThrown){
+						console.log("error...");				
+	  		  		  }
+				    });	
+	              } //confirm end   
+			  });
+	        });
+		</script>
+		<script>
+			 $(document).on('click', '.nic_edit', function() {
+				 sl_no = $(this).attr('id');                	 
+                	$("#editModal").modal("show");
+				$.ajax({
+				    type:'POST',
+				    url:'/getNicById/'+sl_no,					
+					method:'POST',
+					datatype:"json",
+					success:function(data,textStatus,jqXHR){
+						$("#sl_no").val(data.sl_no);
+		    			$("#user_name").val(data.user_name);
+		    			$("#station_name").val(data.station.station_name);
+		    			$("#parameter_name").val(data.parameter_name);	
+		    			$("#parameter_unit").val(data.parameter_unit);
+		    			$("#date").val(data.date);	
+		    			$("#status").val(data.status);
+  				},
+				error:function(jqXHR,textStatus,errorThrown){
+					console.log("error...");
+  				}
+			});	
+                	   
+		 });
+     </script>
+     <script>
+		  	$(document).ready(function(){
+		  		console.log("page is ready .....")
+		  		
+		  		$("#myform").on('submit',function(event){
+		  			event.preventDefault();
+					var f=$(this).serialize();
+					$.ajax({
+		  				url:"/updateNic",
+		  				data:f,
+		  				type:'POST',		  				
+		  				success:function(data,textStatus,jqXHR){
+			  				if(data.trim() ==='done'){			  					
+			  					window.location.href = '/viewNic';		  				
+			  		  		}else{
+					  		  	console.log("Error...");
+			  		  		}
+		  				},		  				
+						error:function(jqXHR,textStatus,errorThrown){
+							console.log("error...")							
+		  				} 				
+		  			});
+		  		});
+		  	});
+		  </script>
+     
+     	<script>		
+		$(document).ready(function() {				
+	        	$.ajax({
+	    			url:"/allstation",
+	    			type:"get",	    			
+	    			success:function(data,textStatus,jqXHR){ 					 
+	    				console.log(data);	    				
+	    				 let s="";
+	    				for (var key in data) {
+	    					if (data.hasOwnProperty(key)) {	 
+	    					
+	    					 s+="<option  value='"+data[key].station_id+"'  >"+data[key].station_name+"</option>";
+	    					}
+	    				}
+	    				$('#allStation').html(s);
+	    				console.log("success...")
+	    	  		},
+	    		error:function(jqXHR,textStatus,errorThrown){
+	    			console.log(jqXHR.responseText);
+	    				console.log("error...")
+	    			}
+	    	    });
+		  });  
+		</script> 
+</body>
+
+</html>

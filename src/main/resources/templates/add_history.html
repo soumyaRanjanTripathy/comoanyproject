@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+	<link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet">
+<title>Home page</title>
+</head>
+<body>
+	<div>
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<!-- <a class="navbar-brand" href="#">NIC Management System</a>-->
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+					<li class="nav-item active"><a class="nav-link" href="chart">Graphical
+							Data </a></li>
+					<li class="nav-item active"><a class="nav-link" href="nic"> Nic Data </a></li>				
+
+				</ul>
+
+
+				<!-- logo image -->
+
+				<a href="add_nic.html"> <img
+					src="https://uxdt.nic.in/wp-content/uploads/2020/06/ICONIC_SQUARE_NIC_Logo_blue-01.png?x35530 width="
+					100" height="100""></a>
+
+			</div>
+			<div>
+				<th:block th:if="${session.msg}">
+					<p class="text-center fs-3  " style="padding-right:15px;color:white; font-size: 20px!important;"><spam>[[${session.msg}]]</spam></p>	
+			     </th:block>
+			</div>
+			<div style="padding-right:15px;">
+				<a class=" btn btn-danger" href="destroy" >Logout</a>
+			</div>
+		</nav>
+		
+	</div>
+	
+	<!--nabvar end-->
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-3 ">
+				<div class="card">
+					<div class="card-body"><!-- checkAvilablity -->
+					<form action="checkAvilablity" method="post">
+						<div class="form-outline mb-3">
+							<label for="AllUser">User Name:</label>  
+							<select class="form-control test" required="required"   name="user_name" id="AllUser">								
+							
+							</select>
+						</div>
+						<div class="form-outline mb-3">
+							<label for="allStation">Station Name:</label> 
+							<select class="form-control" name="station_name" id="allStation" >									
+								
+							</select>
+						</div>
+						<div class="form-outline mb-3">
+							<label for="fromDate">From Date</label> 
+							<input type="date" size="30" id="fromDate" name="date" class="form-control">								
+						</div>
+						<div class="form-outline mb-3">
+							<label for="toDate">To Date</label> 
+							<input type="date" size="30" id="toDate" name="todate" class="form-control">								
+						</div>
+						<div class="form-outline mb-3">
+							<input class="form-control btn-primary" type="submit" name="Checkout" value="Checkout">
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9 ">
+				<div class="card">
+					<table id="example" class="display nowrap " style="width:100%">
+						<thead class="bg-success text-white">
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">User</th>
+						<th scope="col">Station</th>
+						<th scope="col">Parameter Name</th>
+						<th scope="col">Parameter Unit</th>
+						<th scope="col">Date</th>
+						<th scope="col">Status</th>
+						
+					</tr>
+						</thead>
+						<tbody id="viewHisData">
+								<tr th:each="e: ${emp}">
+								<td th:text="${e.sl_no}"></td>
+								<td th:text="${e.user_name}"></td>
+								<td th:text="${e.station.station_name}"></td>
+								<td th:text="${e.parameter_name}"></td>
+								<td th:text="${e.parameter_unit}"></td>
+								<td th:text="${e.date}"></td>
+								<td th:text="${e.status}"></td>
+								 
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+				
+		
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.7.0.js"
+		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+		<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+		<script>
+		$(document).ready(function() {
+		    $('#example').DataTable( {
+		        dom: 'Bfrtip',
+		        buttons: [
+		            'copy', 'csv', 'excel', 'pdf', 'print'
+		        ]
+		    } );
+		} );
+		</script>
+
+	
+		
+	
+
+	<script>
+		
+		$(document).ready(function() {
+				
+	        	$.ajax({
+	    			url:"/getAllnic",
+	    			type:"get",
+	    			dataType:"json",
+	    			success:function(data,textStatus,jqXHR){ 					 
+	    				console.log(data);	    				
+	    				 let s="";
+	    				for (var key in data) {
+	    					
+	    					if (data.hasOwnProperty(key)) {	  
+	    					 s+="<option class='getStation' id='"+data[key]+"'  value='"+data[key]+"'  >"+data[key]+"</option>";
+	    					}
+	    				}
+	    				$('#AllUser').html(s);
+	    				console.log("success...")
+	    	  		},
+	    		error:function(jqXHR,textStatus,errorThrown){
+	    			console.log(jqXHR.responseText);
+	    				console.log("error...")
+	    			}
+	    	    });
+		  });  
+		</script> 		
+    <script>
+     $(document).ready(function() {
+    	  
+    	  $('#AllUser').change(function() {
+    	    var uname = $(this).val(); 
+    	    $.ajax({
+    	      type: 'GET',
+    	      url: '/stationByUserName/'+uname,
+    	     dataType:"JSON", 
+    	     success:function(data,textStatus,jqXHR){ 					     				
+ 				 let s="";
+ 				for (var key in data) {
+ 					
+ 					if (data.hasOwnProperty(key)) {	  
+ 					 s+="<option class='getStation' id='"+data[key]+"'  value='"+data[key]+"'  >"+data[key]+"</option>";
+ 					}
+ 				}
+ 				$('#allStation').html(s);
+ 				console.log("success...")
+ 	  		},
+ 		error:function(jqXHR,textStatus,errorThrown){
+ 			console.log(jqXHR.responseText);
+ 				console.log("error...")
+ 			}
+    	    });
+    	  });
+    	});
+     </script> 
+</body>
+</html>

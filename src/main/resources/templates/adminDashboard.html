@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+<html lang="en" class="minimal-theme">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+  <!--plugins-->
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+  <link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+
+  <!--Theme Styles-->
+  <link href="assets/css/dark-theme.css" rel="stylesheet" />
+  <link href="assets/css/light-theme.css" rel="stylesheet" />
+  <link href="assets/css/semi-dark.css" rel="stylesheet" />
+  <link href="assets/css/header-colors.css" rel="stylesheet" />
+  
+  
+ <script src="https://kit.fontawesome.com/cf5652f6a4.js" crossorigin="anonymous"></script>
+  <title>NIC</title>
+</head>
+
+<body>
+
+
+  <!--start wrapper-->
+  <div class="wrapper">
+   <!--start top header-->
+      <header class="top-header">        
+        <nav class="navbar navbar-expand">
+          <div class="mobile-toggle-icon d-xl-none">
+              <i class="bi bi-list"></i>
+            </div>
+            <div class="top-navbar d-none d-xl-block">
+            <ul class="navbar-nav align-items-center">
+              <li class="nav-item">
+              <a class="nav-link" href="dashboard">Dashboard</a>
+              </li>
+            
+            </ul>
+            </div> 
+                    
+        </nav>
+      </header>
+       <!--end top header-->
+          <!--start sidebar -->
+        <aside class="sidebar-wrapper" data-simplebar="true">
+          <div class="sidebar-header">
+            
+           
+            <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
+            </div>
+          </div>
+         <!--navigation-->
+          <ul class="metismenu" id="menu">
+            <li>
+              <a href="dashboard" >
+                <div class="parent-icon"><i style='color:#f213e6' class="fa fa-home"></i>
+                </div>
+                <div class="menu-title">Dashboard</div>
+              </a>
+             </li>
+            
+           
+            <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon">
+                <i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+				</div>
+                <div class="menu-title">Admin</div>
+              </a>
+              <ul>
+                <li> <a href="addAdmin" ><i class="bi bi-arrow-right-short"></i>Add Admin</a>
+                </li>
+               <li> <a href="viewAdmin" ><i class="bi bi-arrow-right-short"></i>View Admin</a>
+                </li>
+              </ul>
+            </li>
+         
+              <li>
+              <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i style='color:#ffca36' class="fa fa-users" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">User</div>
+              </a>
+              <ul>
+               <li> <a href="addUser"><i class="bi bi-arrow-right-short"></i>Add User</a>
+                </li>
+                <li> <a href="viewUser"><i class="bi bi-arrow-right-short"></i>View User</a>
+                </li>               
+              </ul>
+            </li>
+           
+             
+             <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">Station</div>
+              </a>
+              <ul>
+                <li> <a href="addStation"><i class="bi bi-arrow-right-short"></i>Add Station</a>
+                </li>
+               <li> <a href="viewStation"><i class="bi bi-arrow-right-short"></i>View Station</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i style='color:#1db9db' class="fa fa-user" aria-hidden="true"></i>
+
+                </div>
+                <div class="menu-title">NiC</div>
+              </a>
+              <ul>
+                <li> <a href="addNic"><i class="bi bi-arrow-right-short"></i>Add Nic</a>
+                </li>
+               <li> <a href="viewNic"><i class="bi bi-arrow-right-short"></i>View Nic</a>
+                </li>
+              </ul>
+            </li>
+             <li>
+              <a href="destroyAdmin" >
+                <div class="parent-icon"><i style='color:red' class="fa fa-lock"></i>
+                </div>
+                <div class="menu-title">Logout</div>
+              </a>
+             </li>
+                   
+          </ul>
+          <!--end navigation-->
+       </aside>
+       <!--end sidebar -->
+       <!--end sidebar -->
+       <!--start content-->
+          <main class="page-content">
+              
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4">
+              
+               <div class="col">
+                  <div class="card radius-10">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-secondary">Total Revenue</p>
+                                <h4 class="my-1"><i class="bi bi-currency-rupee" id="TotalRevenue"></i></h4>
+                                <p class="mb-0 font-13 text-success"><i class="bi bi-caret-up-fill"></i> 4.6 from last week</p>
+                            </div>
+                            <div class="widget-icon-large bg-gradient-success text-white ms-auto"><i class="bi bi-currency-exchange"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+               
+               <div class="col">
+                <div class="card radius-10">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center">
+                          <div>
+                              <p class="mb-0 text-secondary">Total Customers</p>
+                              <h4 class="my-1 bi bi-currency-rupee" id="TotalCustomers"></h4>
+                              <p class="mb-0 font-13 text-danger"><i class="bi bi-caret-down-fill"></i> 2.7 from last week</p>
+                          </div>
+                          <div class="widget-icon-large bg-gradient-danger text-white ms-auto"><i class="bi bi-people-fill"></i>
+                          </div>
+                      </div>
+                  </div>
+               </div>
+               </div>
+           
+            </div><!--end row-->
+
+
+	</main>
+       <!--end page main-->
+
+  </div>
+  <!--end wrapper-->
+
+
+  <!-- Bootstrap bundle JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!--plugins-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/easyPieChart/jquery.easypiechart.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <script src="assets/js/pace.min.js"></script>
+  <script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+	<script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+  <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+  <!--app-->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/index.js"></script>
+
+  <script>
+     new PerfectScrollbar(".best-product")
+     new PerfectScrollbar(".top-sellers-list")
+  </script>
+<!--   <script type="text/javascript">
+		$(document).ready(function() {
+				let event ="event=CountCustomer";
+	        	$.ajax({
+	    			url:"../loginController",
+	    			data:event,
+	    			type:"POST",
+	    			dataType:"json",
+	    			success:function(data,textStatus,jqXHR){
+	    				var x=data;
+	    				 $("#TotalCustomers").html(x);
+	    			},
+	    		error:function(jqXHR,textStatus,errorThrown){
+	    			console.log(jqXHR.responseText);
+	    				console.log("error...")
+	    			}
+	    	    });
+			  });
+		</script> -->
+		
+		
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link rel="stylesheet" th:href="@{/css/a.css}">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+	<link href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet">
+
+
+<title>Home page</title>
+</head>
+
+<body>
+	<div>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-primary  navbar-custom ">
+			<!--<a class="navbar-brand" href="#">NIC Management System</a>-->
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+					<li class="nav-item active"><a class="nav-link" href="chart">Graphical
+							Data </a></li>
+
+					<li class="nav-item active"><a class="nav-link"
+						href="addhistory">Historical Data</a></li>
+
+
+					<li class="nav-item active"></li>
+
+				</ul>
+
+
+				<!-- logo image -->
+
+				<a href="add_nic.html"> <img
+					src="https://uxdt.nic.in/wp-content/uploads/2020/06/ICONIC_SQUARE_NIC_Logo_blue-01.png?x35530 width="
+					100" height="100""></a>
+
+			</div>
+			<div>
+				<th:block th:if="${session.msg}">
+					<p class="text-center fs-3  " style="padding-right:15px;color:white; font-size: 20px!important;">[[${session.msg}]]</p>	
+			     </th:block>
+			</div>
+			<div style="padding-right:15px;">
+				<a class=" btn btn-danger" href="destroy" >Logout</a>
+			</div>
+		</nav>
+
+
+
+		<!--nabvar end-->
+
+
+			<div class="alert alert-success" role="alert" th:if="${message}">
+           			   <span th:text="${message}"></span>
+              			<button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+       		</div>
+
+		<div class=container>
+			<a class=" btn btn-primary mt-3" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add NIC Data</a>
+		</div>
+
+		<div class="container  p-5 ">
+			<table id="example" class="display nowrap " style="width:100%">
+				<thead class="bg-primary text-white">
+					<tr>
+						<th scope="col">sl_no</th>
+						<th scope="col">User</th>
+						<th scope="col">Station</th>
+						<th scope="col">Parameter Name</th>
+						<th scope="col">Parameter Unit</th>
+						<th scope="col">Date</th>
+						<th scope="col">Status</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr th:each="e: ${emp}">
+							<td th:text="${e.sl_no}">1</td>
+							<td th:text="${e.user_name}"></td>
+							<td th:text="${e.station.station_name}"></td>
+							<td th:text="${e.parameter_name}"></td>
+							<td th:text="${e.parameter_unit}"></td>
+							<td th:text="${e.date}"></td>
+							<td th:text="${e.status}"></td>
+							<td>
+								<a th:href="@{/nic/edit/{id}(id=${e.sl_no})}" class="btn btn-primary">Update</a> 
+							    <a th:href="@{/nic/delete/{id}(id=${e.sl_no})}" class="btn btn-danger">Delete</a>
+							</td>
+
+					    </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<!-- modal start  -->
+		<!-- Button trigger modal -->
+
+
+		<!-- Modal -->
+		<!-- Button trigger modal -->
+
+
+		<!-- Modal 1 -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+			data-bs-keyboard="false" tabindex="-1"
+			aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">Add Nic</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					
+					<div class="modal-body">
+						<div class="card-body">
+							<div class="border p-3 rounded">
+								<form th:action="@{/Con}" method="post">
+									<div class="col-12">
+										<label>Enter user_name</label> <input type="text"
+											class="form-control" name="user_name">
+									</div>
+									<div class="col-12">
+										<label> Choose Station  </label>
+										 <select class="form-control" id="allStation"  name="station" >
+												
+					 					</select>
+									</div>
+									<div class="col-12">
+										<label>Enter Date</label> <input type="date" class="form-control" name="date">
+									</div>
+									<div class="col-12">
+										<label>Enter parameter_name</label> <input type="text"
+											class="form-control" name="parameter_name">
+									</div>
+									<div class="col-12">
+										<label>Enter parameter_unit</label> <input type="number"
+											class="form-control" name="parameter_unit">
+									</div>
+									<div class="col-12">
+										<label>Enter status</label> <input type="text"
+											class="form-control" name="status">
+									</div>
+									<div class="col-12">
+										<input type="submit" class="btn btn-primary px-4"
+											value="Submit">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- modal1 End -->
+
+
+
+		<script src="https://code.jquery.com/jquery-3.7.0.js"
+			integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+			crossorigin="anonymous"></script>
+				
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+		<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+		<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+		<script>
+		$(document).ready(function() {
+		    $('#example').DataTable( {
+		        dom: 'Bfrtip',
+		        buttons: [
+		            'copy', 'csv', 'excel', 'pdf', 'print'
+		        ]
+		    } );
+		} );
+		</script>
+		
+		<script>		
+		$(document).ready(function() {				
+	        	$.ajax({
+	    			url:"/allstation",
+	    			type:"get",	    			
+	    			success:function(data,textStatus,jqXHR){ 					 
+	    				console.log(data);	    				
+	    				 let s="";
+	    				for (var key in data) {
+	    					if (data.hasOwnProperty(key)) {	 
+	    					
+	    					 s+="<option  value='"+data[key].station_id+"'  >"+data[key].station_name+"</option>";
+	    					}
+	    				}
+	    				$('#allStation').html(s);
+	    				console.log("success...")
+	    	  		},
+	    		error:function(jqXHR,textStatus,errorThrown){
+	    			console.log(jqXHR.responseText);
+	    				console.log("error...")
+	    			}
+	    	    });
+		  });  
+		</script> 
+</body>
+</html>
+
